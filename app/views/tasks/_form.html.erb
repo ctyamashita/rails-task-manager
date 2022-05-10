@@ -1,0 +1,23 @@
+<div class="mt-5">
+  <% if @task.errors.any? %>
+    <% @task.errors.full_messages.each do |msg| %>
+      <p class='text-danger'><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <%= form_for(@task) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, class: 'form-label mt-3' %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :details, class: 'form-label mt-3' %>
+      <%= f.text_field :details, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :completed, class: 'form-label mt-3' if @task.id %>
+      <%= f.check_box :completed, class: 'form-check' if @task.id %>
+    </div>
+    <%= f.submit class: 'btn btn-light mt-3' %>
+  <% end %>
+</div>

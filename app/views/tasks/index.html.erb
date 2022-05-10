@@ -1,0 +1,14 @@
+<div class="d-flex mt-5">
+  <div class="col-4 box-menu">
+    <h1>All Tasks</h1>
+    <%= link_to '➕ Add task', new_task_path, class: 'btn btn-light mt-3' %>
+  </div>
+  <div class="col-8">
+    <% @tasks.each do |task| %>
+      <div class='card-task'>
+        <p><%= task.completed ? '✔️' : '❌'%> <%= task.title %></p>
+        <%= link_to '', task_path(task), class: 'link-card' %>
+      </div>
+    <% end %>
+  </div>
+</div>

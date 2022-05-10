@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+.link-card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.card-task {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background-color: rgba(173, 216, 230, 0.3);
+  position: relative;
+  border-radius: 4px;
+}
+
+body {
+  font-family: monospace;
+  margin: 0 20vw;
+}
+
+.card-task > p {
+  margin-bottom: 0;
+}
+
+// .box-menu {
+//   background-color: rgba(173, 216, 230, 0.3);
+// }
